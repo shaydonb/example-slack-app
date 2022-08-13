@@ -1,0 +1,47 @@
+display_information:
+  name: T-Mobile Knowledge Bot
+features:
+  app_home:
+    home_tab_enabled: true
+    messages_tab_enabled: true
+    messages_tab_read_only_enabled: true
+  bot_user:
+    display_name: Knowledge Bot
+    always_online: false
+  shortcuts:
+    - name: knowledgebot
+      type: global
+      callback_id: knowledgebot
+      description: Search the Knowledge base!
+  slash_commands:
+    - command: /knowledgebot
+      url: https://<your-domain>/slash
+      description: Knowledge Bot
+      usage_hint: Include terms to use in your search
+      should_escape: false
+oauth_config:
+  redirect_urls:
+    - https://<your-domain>/post-install
+  scopes:
+    bot:
+      - chat:write
+      - commands
+      - reactions:read
+      - links:read
+      - links:write
+      - workflow.steps:execute
+settings:
+  event_subscriptions:
+    request_url: https://<your-domain>/events
+    bot_events:
+      - app_home_opened
+      - link_shared
+      - reaction_added
+      - reaction_removed
+      - workflow_step_execute
+  interactivity:
+    is_enabled: true
+    request_url: https://<your-domain>/interactions
+  org_deploy_enabled: false
+  socket_mode_enabled: true
+  token_rotation_enabled: false

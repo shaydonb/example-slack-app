@@ -1,0 +1,16 @@
+{
+  "name": "Lookup Bot",
+  "version": "1.0.0",
+  "description": "Look Up!",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/bolt": "^3.0.0",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {}
+}
